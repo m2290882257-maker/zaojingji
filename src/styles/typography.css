@@ -1,0 +1,35 @@
+h1,
+h2,
+h3,
+.brand-link {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+}
+
+h1 {
+  color: var(--color-rice-100);
+  font-size: clamp(42px, 7vw, 86px);
+  font-weight: 600;
+  line-height: 1.02;
+  margin: 0 0 20px;
+}
+
+p {
+  color: rgba(245, 234, 215, 0.76);
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+
+.lead {
+  color: var(--color-rice-100);
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.65;
+}
+
+.eyebrow {
+  color: var(--color-gold-400);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
