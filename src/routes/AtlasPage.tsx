@@ -102,8 +102,14 @@ export function AtlasPage() {
                 <span className="dynasty-card-index">
                   {String(dynasty.order).padStart(2, "0")}
                 </span>
-                <div className="dynasty-card-visual" aria-hidden="true">
-                  <span />
+                <div className="dynasty-card-visual">
+                  {dynasty.coverImage ? (
+                    <img
+                      alt={`${dynasty.name}代表藻井`}
+                      loading="lazy"
+                      src={dynasty.coverImage}
+                    />
+                  ) : null}
                 </div>
                 <div className="dynasty-card-copy">
                   <small>{dynasty.englishName}</small>

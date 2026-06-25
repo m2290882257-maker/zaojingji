@@ -187,16 +187,13 @@ export function DynastyWorkCarousel({
               }
               tabIndex={relativeIndex === 0 ? 0 : -1}
             >
-              <span className="dynasty-work-image" aria-hidden="true">
-                <span />
+              <span className="dynasty-work-image">
+                <img alt={item.images.alt} draggable={false} src={item.images.thumbnail} />
               </span>
               <span className="dynasty-work-caption">
                 <small>{dynasty.periodLabel}</small>
                 <strong>{item.shortTitle}</strong>
                 <em>{item.cave}</em>
-              </span>
-              <span className="dynasty-work-replace-note">
-                Replace: {item.images.thumbnail}
               </span>
               <button
                 aria-label={`查看${item.shortTitle}详情`}

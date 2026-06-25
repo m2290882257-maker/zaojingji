@@ -118,20 +118,19 @@ export function AtlasMorphRing({ images, onSelect }: AtlasMorphRingProps) {
           initial={{ opacity: 0, scale: 0.58, x: 0, y: 0, rotate: 0 }}
           key={image.id}
           onClick={onSelect}
-          title={image.replacementNote}
+          title={`${image.periodLabel} · ${image.title}`}
           transition={{ type: "spring", stiffness: 56, damping: 18 }}
           type="button"
         >
           <span className="atlas-ring-card-inner">
-            <span className="atlas-ring-placeholder" aria-hidden="true">
-              <span className="atlas-ring-placeholder-core" />
+            <span className="atlas-ring-image">
+              <img alt={image.alt} loading="lazy" src={image.imagePath} />
             </span>
             <span className="atlas-ring-card-copy">
               <small>{String(image.index).padStart(2, "0")}</small>
               <strong>{image.title}</strong>
               <em>{image.periodLabel}</em>
             </span>
-            <span className="atlas-ring-replace-note">{image.replacementNote}</span>
           </span>
         </motion.button>
       ))}
