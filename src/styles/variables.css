@@ -1,0 +1,40 @@
+:root {
+  --color-ink-950: #050403;
+  --color-ink-900: #080706;
+  --color-ink-850: #0d0a07;
+  --color-ink-800: #14110d;
+  --color-ink-700: #201a13;
+  --color-rice-100: #f5ead7;
+  --color-rice-200: #e2d2b7;
+  --color-rice-400: #a99a80;
+  --color-gold-300: #d6b867;
+  --color-gold-400: #c9a646;
+  --color-gold-600: #8f7332;
+  --color-cinnabar-500: #a33a2b;
+  --color-earth-500: #8f4b2c;
+  --color-stone-blue-500: #1f5a7a;
+  --color-stone-green-500: #4d7356;
+  --color-line-gold: rgba(201, 166, 70, 0.32);
+  --color-line-soft: rgba(245, 234, 215, 0.16);
+  --color-panel: rgba(13, 10, 7, 0.78);
+  --color-panel-solid: #0d0a07;
+  --shadow-suspended: 0 24px 80px rgba(0, 0, 0, 0.48);
+  --space-page-x: clamp(18px, 5vw, 64px);
+  --space-page-y: clamp(32px, 7vw, 88px);
+  --radius-card: 8px;
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --duration-slow: 720ms;
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  color: var(--color-rice-100);
+  background: var(--color-ink-950);
+  font-family:
+    "Noto Sans SC",
+    "Microsoft YaHei",
+    system-ui,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
