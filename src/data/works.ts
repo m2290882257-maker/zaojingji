@@ -27,6 +27,7 @@ type WorkRecord = {
 };
 
 const imageBasePath = "/assets/zaojing/originals";
+const imageVersion = "20260629";
 
 const getLocation = (cave: string) => {
   if (cave.includes("榆林")) {
@@ -39,7 +40,7 @@ const getLocation = (cave: string) => {
 };
 
 const createWork = (record: WorkRecord): Work => {
-  const imagePath = `${imageBasePath}/${record.imageFile}`;
+  const imagePath = `${imageBasePath}/${record.imageFile}?v=${imageVersion}`;
   const catalogNos = record.catalogNos ?? [];
 
   return {

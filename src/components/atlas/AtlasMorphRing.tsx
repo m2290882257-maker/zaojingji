@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { motion } from "motion/react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { OverviewImageSlot } from "../../data/overviewImages";
 
 type AtlasMorphRingProps = {
@@ -108,7 +108,6 @@ export function AtlasMorphRing({ images, onSelect }: AtlasMorphRingProps) {
       <div className="atlas-morph-center">
         <p>Atlas Overview</p>
         <strong>藻井总览</strong>
-        <span>旋转图阵进入敦煌藻井系统</span>
       </div>
 
       {cardTargets.map(({ image, x, y, rotate, scale }) => (

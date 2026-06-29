@@ -1,0 +1,6 @@
+{
+  "name": "藻井集",
+  "description": "面向设计转译的敦煌藻井视觉图鉴",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

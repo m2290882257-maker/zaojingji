@@ -15,7 +15,7 @@ export function CeilingReveal({ progress }: CeilingRevealProps) {
         opacity,
         transform: `translate3d(0, ${translateY}px, 0) scale(${scale})`,
       }}
-      aria-label="逐渐显现的藻井纹样"
+      aria-label="逐渐呈现的藻井线稿"
       role="img"
     >
       <div

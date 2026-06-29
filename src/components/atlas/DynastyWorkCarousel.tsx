@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Dynasty, Work } from "../../types/zhaojing";
 
 type DynastyWorkCarouselProps = {
@@ -119,7 +120,7 @@ export function DynastyWorkCarousel({
         onClick={onPreviousDynasty}
         type="button"
       >
-        <span aria-hidden="true">‹</span>
+        <ChevronLeft className="dynasty-carousel-nav-icon" size={32} strokeWidth={1.5} />
       </button>
 
       <div className="dynasty-card-stack" aria-label={`${dynasty.name}藻井图鉴`}>
@@ -219,7 +220,7 @@ export function DynastyWorkCarousel({
         onClick={onNextDynasty}
         type="button"
       >
-        <span aria-hidden="true">›</span>
+        <ChevronRight className="dynasty-carousel-nav-icon" size={32} strokeWidth={1.5} />
       </button>
 
       <div className="dynasty-carousel-current">
