@@ -38,6 +38,7 @@
   gap: 24px;
   justify-content: space-between;
   padding: 18px var(--space-page-x);
+  padding-left: 32px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -51,6 +52,10 @@
 }
 
 .site-shell:has(.intro-stage) .site-main {
+  padding: 0;
+}
+
+.site-shell:has(.work-page-section) .site-main {
   padding: 0;
 }
 

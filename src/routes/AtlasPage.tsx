@@ -58,11 +58,6 @@ export function AtlasPage() {
 
   return (
     <section className="atlas-stage animate-fade-in" data-view={atlasView}>
-      <div className="atlas-backdrop" aria-hidden="true">
-        <div className="atlas-orbit atlas-orbit-outer" />
-        <div className="atlas-orbit atlas-orbit-inner" />
-      </div>
-
       {atlasView === "overview" ? (
         <div className="atlas-reference-overview atlas-reference-overview-morph">
           <AtlasMorphRing

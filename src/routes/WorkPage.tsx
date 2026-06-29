@@ -1,57 +1,54 @@
-import { Link, useParams } from "react-router-dom";
-import { getWorkById } from "../utils/getWorkById";
+import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Page11 } from "../components/work/Page11";
+import { Page18 } from "../components/work/Page18";
+import { PageArtGenerator } from "../components/work/PageArtGenerator";
+import { works } from "../data/works";
 
 export function WorkPage() {
   const { workId } = useParams();
-  const work = workId ? getWorkById(workId) : null;
+  const work = works.find((w) => w.id === workId) || works.find((w) => w.id === "sui-407-three-hares-feitian");
 
-  if (!work) {
-    return (
-      <section className="page-section animate-fade-in">
-        <div className="page-panel">
-          <p className="eyebrow">Work Detail</p>
-          <h1>未知作品</h1>
-          <p className="lead">当前作品条目不存在，请返回朝代图鉴重新选择。</p>
-          <Link className="action-link action-link-muted" to="/atlas?view=dynasty-index">
-            返回朝代图鉴
-          </Link>
-        </div>
-      </section>
-    );
-  }
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current) {
+        const parentWidth = containerRef.current.parentElement?.clientWidth || window.innerWidth;
+        // Standard design width of the Figma layout is 1920px
+        const newScale = parentWidth / 1920;
+        setScale(newScale);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    // Trigger after a short timeout to make sure DOM is fully measured
+    const timer = setTimeout(handleResize, 100);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
-    <section className="page-section animate-fade-in">
-      <div className="work-detail-panel">
-        <div className="work-detail-image">
-          <img alt={work.images.alt} src={work.images.original} />
-        </div>
-        <div className="work-detail-copy">
-          <p className="eyebrow">Work Detail</p>
-          <h1>{work.shortTitle}</h1>
-          <p className="lead">{work.oneLineSummary}</p>
-          <dl className="work-meta-list">
-            <div>
-              <dt>朝代</dt>
-              <dd>{work.periodLabel}</dd>
-            </div>
-            <div>
-              <dt>洞窟</dt>
-              <dd>{work.cave}</dd>
-            </div>
-            <div>
-              <dt>地点</dt>
-              <dd>{work.location}</dd>
-            </div>
-          </dl>
-          <div className="dynasty-keywords">
-            {work.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </div>
-          <Link className="action-link action-link-muted" to={`/atlas/${work.dynastyId}`}>
-            返回朝代图鉴
-          </Link>
+    <section className="work-page-section relative min-h-screen bg-black overflow-x-hidden text-white" ref={containerRef}>
+      {/* Scaled Figma Viewport Center */}
+      <div className="w-full flex flex-col items-center justify-start bg-black overflow-hidden" style={{ height: `${3240 * scale}px` }}>
+        <div
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "top center",
+            width: "1920px",
+            height: "3240px",
+            transition: "transform 0.15s ease-out",
+          }}
+          className="relative select-none"
+        >
+          <Page11 />
+          <Page18 />
+          <PageArtGenerator />
         </div>
       </div>
     </section>

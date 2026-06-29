@@ -403,10 +403,7 @@
 }
 
 .atlas-stage {
-  background:
-    radial-gradient(circle at 50% 34%, rgba(201, 166, 70, 0.09), transparent 28%),
-    radial-gradient(circle at 76% 18%, rgba(31, 90, 122, 0.12), transparent 24%),
-    var(--color-ink-950);
+  background: transparent;
   min-height: calc(100vh - 72px);
   overflow-x: hidden;
   overflow-y: visible;
@@ -589,7 +586,7 @@
   position: absolute;
   text-align: center;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% + 60px), -50%);
   z-index: 1;
 }
 
@@ -920,10 +917,7 @@
 
 .selected-dynasty-stage {
   align-items: center;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(201, 166, 70, 0.08), transparent 28%),
-    linear-gradient(90deg, rgba(31, 90, 122, 0.08), transparent 18%, transparent 82%, rgba(31, 90, 122, 0.08)),
-    var(--color-ink-950);
+  background: transparent;
   display: flex;
   min-height: calc(100vh - 74px);
   overflow: hidden;
@@ -1191,10 +1185,17 @@
   transform: translateY(-50%);
 }
 
-.dynasty-carousel-nav span {
-  font-size: 56px;
-  line-height: 0.7;
-  transform: translateY(-2px);
+.dynasty-carousel-nav-icon {
+  display: block;
+  transition: transform var(--duration-base) var(--ease-soft);
+}
+
+.dynasty-carousel-nav-left:hover .dynasty-carousel-nav-icon {
+  transform: translateX(-2px);
+}
+
+.dynasty-carousel-nav-right:hover .dynasty-carousel-nav-icon {
+  transform: translateX(2px);
 }
 
 .dynasty-carousel-nav-left {

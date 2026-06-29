@@ -37,9 +37,6 @@ export function SelectedDynastyPage() {
 
   return (
     <section className="selected-dynasty-stage animate-fade-in">
-      <Link className="selected-dynasty-back action-link action-link-muted" to="/atlas?view=dynasty-index">
-        返回藻井图鉴
-      </Link>
       <DynastyWorkCarousel
         dynasty={dynasty}
         hasNextDynasty={Boolean(nextDynasty)}
